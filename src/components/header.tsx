@@ -1,6 +1,5 @@
-import React from "react";
-
-function Header() {
+import * as React from "react";
+const Header=()=> {
   return (
     <>
       <div style={{ backgroundColor: "#1e293b" }}>
