@@ -10,7 +10,7 @@ const Header=()=> {
                 <span className="sr-only">Your Company</span>
                 <img
                   className="h-8 w-auto sm:h-10"
-                  src="assets/images/ashu.jpeg"
+                  // src="assets/images/ashu.jpeg"
                   alt=""
                 />
               </a>
