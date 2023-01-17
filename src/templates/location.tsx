@@ -94,18 +94,18 @@ const Location: Template<TemplateRenderProps> = ({
   console.log("dd", hours);
   const [data, setData] = React.useState([]);
 
-  const Fetch = {
-    method: "get",
-    url: "https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=50&api_key=ed9fb6461531aa59f5ce73445dea9093&v=20230110&entityTypes=location&location=jaipur&limit=2&ressolvePlaceholders=true",
-  };
-  axios(Fetch)
-    .then(function (response) {
-      setData(response?.data?.response?.entities);
-      // console.log(response)
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  // const Fetch = {
+  //   method: "get",
+  //   url: "https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=50&api_key=ed9fb6461531aa59f5ce73445dea9093&v=20230110&entityTypes=location&location=jaipur&limit=2&ressolvePlaceholders=true",
+  // };
+  // axios(Fetch)
+  //   .then(function (response) {
+  //     setData(response?.data?.response?.entities);
+  //     // console.log(response)
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   });
 
   return (
     <>
