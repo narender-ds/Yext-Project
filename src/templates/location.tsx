@@ -92,7 +92,7 @@ const Location: Template<TemplateRenderProps> = ({ document }) => {
               return <img style={{ marginLeft: "386px" }} src={item.url} />;
             })}{" "}
             <br />
-            <Card
+            <Card  
               name={<Details address={address} phone={mainPhone}></Details>}
             />
             {hours && <Card name={<Hours title={name} hours={hours} />} />}
