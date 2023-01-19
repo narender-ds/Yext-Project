@@ -38,9 +38,9 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
   return `index.html`;
 };
 
-export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
-  return [`index-old/${document.id.toString()}`];
-};
+// export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
+//   return [`index-old/${document.id.toString()}`];
+// };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot,
