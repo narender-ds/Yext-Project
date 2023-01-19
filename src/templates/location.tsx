@@ -12,17 +12,11 @@ import * as React from "react";
 import Banner from "../components/banner";
 import Details from "../components/details";
 import Hours from "../components/hours";
-import List from "../components/list";
-import PageLayout from "../components/page-layout";
-import StaticMap from "../components/static-map";
 import Favicon from "../public/yext-favicon.ico";
 import "../index.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import axios from "axios";
 import Card from "../components/card";
-// import { Address } from "@yext/pages/components";
-
 export const config: TemplateConfig = {
   stream: {
     $id: "my-location2",
@@ -84,28 +78,9 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   };
 };
 
-const Location: Template<TemplateRenderProps> = ({
-  relativePrefixToRoot,
-  path,
-  document,
-}) => {
+const Location: Template<TemplateRenderProps> = ({ document }) => {
   // eslint-disable-next-line react/prop-types
-  const { _site, name, address,mainPhone, hours, c_locationData } = document;
-  console.log("dd", hours);
-  const [data, setData] = React.useState([]);
-
-  // const Fetch = {
-  //   method: "get",
-  //   url: "https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=50&api_key=ed9fb6461531aa59f5ce73445dea9093&v=20230110&entityTypes=location&location=jaipur&limit=2&ressolvePlaceholders=true",
-  // };
-  // axios(Fetch)
-  //   .then(function (response) {
-  //     setData(response?.data?.response?.entities);
-  //     // console.log(response)
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   });
+  const { _site, name, address, mainPhone, hours, c_locationData } = document;
 
   return (
     <>
@@ -117,25 +92,14 @@ const Location: Template<TemplateRenderProps> = ({
               return <img style={{ marginLeft: "386px" }} src={item.url} />;
             })}{" "}
             <br />
-            <Card title={<Details address={address} phone={mainPhone}></Details>} />
-            {hours && <Card title={<Hours title={name} hours={hours} />} />}
             <Card
-              title={
-                <p style={{fontWeight:"bold"}}>About {name} : </p>} des={c_locationData.description}/>
-            {data.map((item) => {
-              return (
-                item.yextDisplayCoordinate && (
-                  <Card
-                    title={
-                      <StaticMap
-                        latitude={item.yextDisplayCoordinate?.latitude}
-                        longitude={item.yextDisplayCoordinate.longitude}
-                      />
-                    }
-                  />
-                )
-              );
-            })}
+              name={<Details address={address} phone={mainPhone}></Details>}
+            />
+            {hours && <Card name={<Hours title={name} hours={hours} />} />}
+            <Card
+              name={<p style={{ fontWeight: "bold" }}>About {name} : </p>}
+              address={c_locationData.description}
+            />
             <h1>
               <a href={c_locationData.name} target={"_blank"}>
                 Click Here To Visit Site
@@ -151,10 +115,9 @@ const Location: Template<TemplateRenderProps> = ({
 };
 
 export default Location;
-const styles={
-  mainContainer:{
+const styles = {
+  mainContainer: {
     marginTop: "50px",
-    backgroundColor:"#EEfAE6"
-
-  }
-}
+    backgroundColor: "#EEfAE6",
+  },
+};

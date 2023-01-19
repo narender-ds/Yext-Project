@@ -1,11 +1,13 @@
+import { Address } from "@yext/pages/components";
 import * as React from "react";
 
 type CardProps = {
-  title: string;
-  des: string;
+  name: string;
+  address: string;
+  phone: string;
 };
 
-const Card = ({ title, des }: CardProps) => {
+const Card = ({ name, address,phone }: CardProps) => {
   return (
     <>
       <div className="centered-container">
@@ -18,8 +20,9 @@ const Card = ({ title, des }: CardProps) => {
               </h5> */}
             </a>
             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              {title}
-              {des}
+              {name}
+              {address}
+              {phone}
             </p>
           </div>
           {/* <div>
