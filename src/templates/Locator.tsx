@@ -17,20 +17,7 @@ import Header from "../components/header";
 import "../index.css";
 
 export const config: TemplateConfig = {
-  stream: {
-    $id: "locator",
-
-    fields: ["id", "uid", "meta"],
-
-    filter: {
-      entityTypes: ["location"],
-    },
-
-    localization: {
-      locales: ["en"],
-      primary: false,
-    },
-  },
+  
 };
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
