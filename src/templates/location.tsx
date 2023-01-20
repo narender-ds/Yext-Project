@@ -17,6 +17,7 @@ import "../index.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Card from "../components/card";
+// import Carousel from "../components/carousel";
 export const config: TemplateConfig = {
   stream: {
     $id: "my-location2",
@@ -27,8 +28,9 @@ export const config: TemplateConfig = {
       "name",
       "address",
       "mainPhone",
-      "  hours",
+      "hours",
       "c_locationData",
+      
     ],
 
     filter: {
@@ -86,29 +88,39 @@ const Location: Template<TemplateRenderProps> = ({ document }) => {
     <>
       <Header />
       <Banner />
-      <div className="centered-container" style={styles.mainContainer}>
+      {/* <Carousel/> */}
+      {/* <div className="centered-container" style={styles.mainContainer}>
         <div className="section">
+          
           <div className="grid grid-cols-2 gap-x-10 gap-y-10">
             {c_locationData.image.map((item: any) => {
-              return <img style={{ marginLeft: "386px" }} src={item.url} />;
+              return (
+              <img style={{ marginLeft: "386px" }} src={item.url} alt=""/>
+              );
             })}{" "}
+            
             <br />
+            
             <Card
               name={<Details address={address} phone={mainPhone}></Details>}
             />
             {hours && <Card name={<Hours title={name} hours={hours} />} />}
+            
             <Card
               name={<p style={{ fontWeight: "bold" }}>About {name} : </p>}
+              // eslint-disable-next-line react/prop-types
               address={c_locationData.description}
             />
             <h1>
+              
               <a href={c_locationData.name} target={"_blank"}>
                 Click Here To Visit Site
               </a>
             </h1>
           </div>
         </div>
-      </div>
+      </div> */}
+      FGJKGFJHGHKJ
 
       <Footer />
     </>

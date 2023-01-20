@@ -1,3 +1,4 @@
+import { DropdownItem } from "@yext/search-ui-react";
 import * as React from "react";
 import Card from "./card";
 import Details from "./details";
@@ -27,11 +28,13 @@ const FetchData = () => {
             console.log("first", item);
             return (
               <>
+              <a href={item.slug}>
                 <Details
                   name={item.name}
                   address={item.address}
                   phone={item.mainPhone}
                 />
+                </a>
               </>
             );
           })}
@@ -42,3 +45,5 @@ const FetchData = () => {
 };
 
 export default FetchData;
+
+
