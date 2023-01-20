@@ -85,16 +85,15 @@ const Location: Template<TemplateRenderProps> = ({ document }) => {
   return (
     <>
       <Header />
-      <Banner/>
+      <Banner />
       <div className="centered-container" style={styles.mainContainer}>
         <div className="section">
           <div className="grid grid-cols-2 gap-x-10 gap-y-10">
-           
             {c_locationData.image.map((item: any) => {
               return <img style={{ marginLeft: "386px" }} src={item.url} />;
             })}{" "}
             <br />
-            <Card  
+            <Card
               name={<Details address={address} phone={mainPhone}></Details>}
             />
             {hours && <Card name={<Hours title={name} hours={hours} />} />}

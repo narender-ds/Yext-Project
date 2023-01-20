@@ -18,13 +18,9 @@ import "../index.css";
 export const config: TemplateConfig = {};
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  //   return document.slug ? document.slug : `${document.id.toString()}`;
-  return `index.html`;
+   return `index.html`;
 };
 
-// export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
-//   return [`index-old/${document.id.toString()}`];
-// };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot,
