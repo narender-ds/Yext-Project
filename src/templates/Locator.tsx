@@ -61,6 +61,9 @@ const Locator: Template<TemplateRenderProps> = ({
               className="overflow-y-auto sm:overflow-auto sm:border lg:w-1/3 w-full"
               style={{ width: "250px", maxHeight: "580px" }}
             >
+
+
+              <p>rtyy umtyu</p>
               <div className="flex flex-col justify-between border-b p-4 shadow-sm hoverlist result">
                 <div className="flex text-base">
                   <div className="text-sm">
