@@ -12,7 +12,6 @@ import * as React from "react";
 import FetchData from "../components/fetchData";
 import Footer from "../components/footer";
 import Header from "../components/header";
-import StaticMap from "../components/static-map";
 
 import "../index.css";
 
@@ -54,7 +53,7 @@ const Locator: Template<TemplateRenderProps> = ({
   // eslint-disable-next-line react/prop-types
   document,
 }) => {
-  const {} = document;
+  // const {} = document;
 
   return (
     <>

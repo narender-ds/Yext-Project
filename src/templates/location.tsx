@@ -89,7 +89,7 @@ const Location: Template<TemplateRenderProps> = ({ document }) => {
       <Header />
       <Banner />
       {/* <Carousel/> */}
-      {/* <div className="centered-container" style={styles.mainContainer}>
+      <div className="centered-container" style={styles.mainContainer}>
         <div className="section">
           
           <div className="grid grid-cols-2 gap-x-10 gap-y-10">
@@ -119,8 +119,7 @@ const Location: Template<TemplateRenderProps> = ({ document }) => {
             </h1>
           </div>
         </div>
-      </div> */}
-      FGJKGFJHGHKJ
+      </div>
 
       <Footer />
     </>
