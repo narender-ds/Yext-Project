@@ -12,15 +12,15 @@ import * as React from "react";
 import FetchData from "../components/fetchData";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import StaticMap from "../components/static-map";
 
 import "../index.css";
 
 export const config: TemplateConfig = {};
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-   return `index.html`;
+  return `index.html`;
 };
-
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot,
@@ -62,7 +62,19 @@ const Locator: Template<TemplateRenderProps> = ({
       <div className="centered-container">
         <div className="section">
           <div className="grid grid-cols-2 gap-x-10 gap-y-10">
-            <FetchData />
+            <div
+              className="overflow-y-auto sm:overflow-auto sm:border lg:w-1/3 w-full"
+              style={{ width: "250px", maxHeight: "580px" }}
+            >
+              <div className="flex flex-col justify-between border-b p-4 shadow-sm hoverlist result">
+                <div className="flex text-base">
+                  <div className="text-sm">
+                    <FetchData />
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* <StaticMap/> */}
           </div>
         </div>
       </div>

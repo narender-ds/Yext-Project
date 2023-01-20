@@ -1,6 +1,7 @@
 import * as React from "react";
 import Card from "./card";
 import Details from "./details";
+import StaticMap from "./static-map";
 
 const FetchData = () => {
   const [user, setUser] = React.useState<any>([]);
@@ -26,11 +27,11 @@ const FetchData = () => {
             console.log("first", item);
             return (
               <>
-                <Card
-                  address={<Details name={item.name} address={item.address} />}
+                <Details
+                  name={item.name}
+                  address={item.address}
                   phone={item.mainPhone}
                 />
-                
               </>
             );
           })}
