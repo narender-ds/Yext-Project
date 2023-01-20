@@ -13,7 +13,7 @@ import * as React from "react";
 import FetchData from "../components/fetchData";
 import Footer from "../components/footer";
 import Header from "../components/header";
-import { Scrollbars } from 'react-custom-scrollbars';
+// import { Scrollbars } from 'react-custom-scrollbars';
 
 import "../index.css";
 
@@ -71,9 +71,9 @@ const Locator: Template<TemplateRenderProps> = ({
       <div className="centered-container">
         <div className="section">
           <div className="grid grid-cols-2 gap-x-10 gap-y-10">
-          <Scrollbars style={{ width:400, height: 500 }} >
+          {/* <Scrollbars style={{ width:400, height: 500 }} > */}
             <FetchData />
-            </Scrollbars>
+            {/* </Scrollbars> */}
           </div>
         </div>
       </div>
