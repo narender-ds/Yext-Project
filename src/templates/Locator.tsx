@@ -17,13 +17,11 @@ import "../index.css";
 
 export const config: TemplateConfig = {};
 
-export const getPath: GetPath<TemplateProps> = ({ document }) => {
+export const getPath: GetPath<TemplateProps> = ({ document: any }) => {
   return `index.html`;
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
-  relativePrefixToRoot,
-  path,
   document,
 }): HeadConfig => {
   return {
@@ -49,14 +47,12 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   };
 };
 
-
-const Locator: Template<TemplateRenderProps> = ({ document }) => {
+const Locator: Template<TemplateRenderProps> = ({
   // eslint-disable-next-line react/prop-types
-  const {  name} = document;
-
+  document,
+}) => {
   return (
     <>
-      <>
       <Header />
       <div className="centered-container">
         <div className="section">
@@ -73,15 +69,11 @@ const Locator: Template<TemplateRenderProps> = ({ document }) => {
                 </div>
               </div>
             </div>
-            {/* <StaticMap/> */}
           </div>
         </div>
       </div>
       <Footer />
     </>
-
-    </>
   );
 };
-
 export default Locator;

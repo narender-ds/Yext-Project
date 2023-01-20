@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   GetHeadConfig,
   GetPath,
@@ -12,12 +13,12 @@ import * as React from "react";
 import Banner from "../components/banner";
 import Details from "../components/details";
 import Hours from "../components/hours";
-import Favicon from "../public/yext-favicon.ico";
 import "../index.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Card from "../components/card";
-// import Carousel from "../components/carousel";
+import { Link } from "@yext/pages/components";
+
 export const config: TemplateConfig = {
   stream: {
     $id: "my-location2",
@@ -30,7 +31,6 @@ export const config: TemplateConfig = {
       "mainPhone",
       "hours",
       "c_locationData",
-      
     ],
 
     filter: {
@@ -52,8 +52,6 @@ export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
-  relativePrefixToRoot,
-  path,
   document,
 }): HeadConfig => {
   return {
@@ -68,55 +66,45 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: document.description,
         },
       },
-      {
-        type: "link",
-        attributes: {
-          rel: "icon",
-          type: "image/x-icon",
-          href: Favicon,
-        },
-      },
     ],
   };
 };
 
 const Location: Template<TemplateRenderProps> = ({ document }) => {
-  // eslint-disable-next-line react/prop-types
-  const { _site, name, address, mainPhone, hours, c_locationData } = document;
+  const { name, address, mainPhone, hours, c_locationData } = document;
 
   return (
     <>
       <Header />
       <Banner />
-      {/* <Carousel/> */}
       <div className="centered-container" style={styles.mainContainer}>
         <div className="section">
-          
           <div className="grid grid-cols-2 gap-x-10 gap-y-10">
             {c_locationData.image.map((item: any) => {
               return (
-              <img style={{ marginLeft: "386px" }} src={item.url} alt=""/>
+                <>
+                  <img style={{ marginLeft: "386px" }} src={item.url} alt="" />
+                </>
               );
             })}{" "}
-            
             <br />
-            
             <Card
-              name={<Details address={address} phone={mainPhone}></Details>}
+              title={<Details address={address} phone={mainPhone}></Details>}
+              Description=""
             />
-            {hours && <Card name={<Hours title={name} hours={hours} />} />}
-            
+            {hours && (
+              <Card
+                title={<Hours title={name} hours={hours} />}
+                Description=""
+              />
+            )}
             <Card
-              name={<p style={{ fontWeight: "bold" }}>About {name} : </p>}
-              // eslint-disable-next-line react/prop-types
-              address={c_locationData.description}
+              title={<p style={{ fontWeight: "bold" }}>About {name} : </p>}
+              Description={c_locationData.description}
             />
-            <h1>
-              
-              <a href={c_locationData.name} target={"_blank"}>
-                Click Here To Visit Site
-              </a>
-            </h1>
+            <Link href={c_locationData.name} target={"_blank"}>
+              {"Click Here To Visit Site"}
+            </Link>
           </div>
         </div>
       </div>
