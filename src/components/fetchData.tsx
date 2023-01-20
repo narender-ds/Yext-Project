@@ -6,7 +6,7 @@ const FetchData = () => {
 
   const Result = async () => {
     const response = await fetch(
-      "https:liveapi-sandbox.yext.com/v2/accounts/me/entities?api_key=ed9fb6461531aa59f5ce73445dea9093&v=20230110&entityTypes=location&entityTypes=location"
+      "https:liveapi-sandbox.yext.com/v2/accounts/me/entities?api_key=ed9fb6461531aa59f5ce73445dea9093&v=20230110&entityTypes=location"
     );
     const data = await response.json();
     return setUser(data);
