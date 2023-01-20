@@ -49,7 +49,7 @@ const Banner = (props: Banner) => {
                 style="text-orange bg-white shadow-xl"
               ></Cta>
               <Cta
-                buttonText="Order Delivery"
+                // buttonText="Order Delivery"
                 url="#"
                 style="text-orange bg-white shadow-xl"
               ></Cta>
