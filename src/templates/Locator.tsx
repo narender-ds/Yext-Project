@@ -49,14 +49,14 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   };
 };
 
-const Locator: Template<TemplateRenderProps> = ({
+
+const Locator: Template<TemplateRenderProps> = ({ document }) => {
   // eslint-disable-next-line react/prop-types
-  document,
-}) => {
-  // const {} = document;
+  const {  name} = document;
 
   return (
     <>
+      <>
       <Header />
       <div className="centered-container">
         <div className="section">
@@ -79,6 +79,9 @@ const Locator: Template<TemplateRenderProps> = ({
       </div>
       <Footer />
     </>
+
+    </>
   );
 };
+
 export default Locator;
